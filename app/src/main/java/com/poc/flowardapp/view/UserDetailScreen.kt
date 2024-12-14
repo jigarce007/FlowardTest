@@ -5,6 +5,7 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -12,6 +13,7 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -36,7 +38,12 @@ import com.poc.flowardapp.veiwModel.MainViewModel
 @Composable
 fun UserDetailScreen(user: User, viewModel: MainViewModel) {
     val posts = viewModel.getPostsByUserId(user.userId)
-
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFe5ddd2))
+            .fillMaxSize()
+    )
     Column(modifier = Modifier.padding(10.dp)) {
         Image(
             painter = rememberImagePainter(user.url),
@@ -69,7 +76,7 @@ fun PostItem(post: Post) {
             .fillMaxWidth()
             .padding(5.dp),
         shape = RoundedCornerShape(10.dp),
-        border = BorderStroke(0.5.dp, Color(0xFFCECECE)),
+        border = BorderStroke(0.7.dp, Color(0xFFe6c0a6)),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF))
     ) {
         Column(
@@ -82,7 +89,7 @@ fun PostItem(post: Post) {
                 text = post.title,
                 fontWeight = FontWeight.Normal,
                 style = MaterialTheme.typography.titleMedium,
-                color = Color(0xFF000000)
+                color = Color(0xFF03303d)
             )
             Spacer(modifier = Modifier.height(1.dp))
             Text(

@@ -7,6 +7,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -47,7 +48,11 @@ import com.poc.flowardapp.veiwModel.MainViewModel
 fun MainScreen(viewModel: MainViewModel, navController: NavHostController) {
     val users by viewModel.users.collectAsState()
     val posts by viewModel.posts.collectAsState()
-
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(Color(0xFFe5ddd2))
+    )
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.spacedBy(8.dp)
@@ -69,7 +74,7 @@ fun UserItem(user: User, postCount: Int, onClick: () -> Unit) {
             .padding(5.dp)
             .clickable(onClick = onClick),
         shape = RoundedCornerShape(10.dp),
-        border = BorderStroke(0.5.dp, Color(0xFFCECECE)),
+        border = BorderStroke(0.7.dp, Color(0xFFe6c0a6)),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF))
     ) {
         Row(
@@ -96,7 +101,7 @@ fun UserItem(user: User, postCount: Int, onClick: () -> Unit) {
                     text = user.name ?: "No Title",
                     fontWeight = FontWeight.Normal,
                     style = MaterialTheme.typography.titleLarge,
-                    color = Color(0xFF000000)
+                    color = Color(0xFF03303d)
                 )
                 Text(
                     text = "Posts($postCount)",
@@ -105,8 +110,8 @@ fun UserItem(user: User, postCount: Int, onClick: () -> Unit) {
                     color = Color(0xFF545454)
                 )
             }
-            IconButton(onClick = { /* Handle action */ }) {
-                Icon(Icons.Default.PlayArrow, contentDescription = null)
+            IconButton(onClick = { }) {
+                Icon(Icons.Default.PlayArrow, contentDescription = null, tint = Color(0xFFe6c0a6))
             }
         }
     }
