@@ -93,15 +93,15 @@ fun UserItem(user: User, postCount: Int, onClick: () -> Unit) {
             ) {
                 Text(
                     text = user.name ?: "No Title",
-                    fontWeight = FontWeight.Light,
+                    fontWeight = FontWeight.Normal,
                     style = MaterialTheme.typography.titleLarge,
-                    color = Color(0xFF03303d)
+                    color = Color(0xFF000000)
                 )
                 Text(
                     text = "Posts($postCount)",
                     fontWeight = FontWeight.Light,
                     style = MaterialTheme.typography.bodyMedium,
-                    color = Color.DarkGray
+                    color = Color(0xFF545454)
                 )
             }
             IconButton(onClick = { /* Handle action */ }) {

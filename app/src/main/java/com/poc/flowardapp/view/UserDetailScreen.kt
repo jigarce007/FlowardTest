@@ -79,13 +79,15 @@ fun PostItem(post: Post) {
         ) {
             Text(
                 text = post.title,
-                fontWeight = FontWeight.Medium,
-                style = MaterialTheme.typography.titleMedium
+                fontWeight = FontWeight.Normal,
+                style = MaterialTheme.typography.titleMedium,
+                color = Color(0xFF000000)
             )
             Spacer(modifier = Modifier.height(1.dp))
             Text(
                 text = post.body,
                 fontWeight = FontWeight.Light,
+                color = Color(0xFF545454),
                 style = MaterialTheme.typography.bodyMedium
             )
         }
