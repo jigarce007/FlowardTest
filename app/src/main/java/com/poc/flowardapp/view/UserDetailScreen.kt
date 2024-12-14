@@ -61,6 +61,7 @@ fun UserDetailScreen(user: User, viewModel: MainViewModel) {
         }
     }
 }
+
 @Composable
 fun PostItem(post: Post) {
     Card(

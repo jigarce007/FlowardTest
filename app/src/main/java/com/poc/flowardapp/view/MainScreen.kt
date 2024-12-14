@@ -42,6 +42,7 @@ import androidx.navigation.NavHostController
 import coil.compose.rememberImagePainter
 import com.poc.flowardapp.model.User
 import com.poc.flowardapp.veiwModel.MainViewModel
+
 @Composable
 fun MainScreen(viewModel: MainViewModel, navController: NavHostController) {
     val users by viewModel.users.collectAsState()
@@ -67,7 +68,7 @@ fun UserItem(user: User, postCount: Int, onClick: () -> Unit) {
             .fillMaxWidth()
             .padding(5.dp)
             .clickable(onClick = onClick),
-                shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(10.dp),
         border = BorderStroke(0.5.dp, Color(0xFFCECECE)),
         colors = CardDefaults.cardColors(containerColor = Color(0xFFFFFFFF))
     ) {

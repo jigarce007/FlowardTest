@@ -13,10 +13,10 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(private val userRepository: UserRepository) : ViewModel() {
     private val _users = MutableStateFlow<List<User>>(emptyList())
-    val users: MutableStateFlow<List<User>> get() =  _users
+    val users: MutableStateFlow<List<User>> get() = _users
 
     private val _posts = MutableStateFlow<List<Post>>(emptyList())
-    val posts: MutableStateFlow<List<Post>> get() =  _posts
+    val posts: MutableStateFlow<List<Post>> get() = _posts
 
     init {
         viewModelScope.launch {
@@ -25,7 +25,7 @@ class MainViewModel @Inject constructor(private val userRepository: UserReposito
         }
     }
 
-    fun getPostsByUserId(userId: Int):List<Post> {
+    fun getPostsByUserId(userId: Int): List<Post> {
         return posts.value.filter { it.userId == userId }
     }
 }

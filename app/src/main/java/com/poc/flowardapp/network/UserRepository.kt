@@ -6,6 +6,6 @@ import javax.inject.Inject
 
 class UserRepository @Inject constructor(private val apiService: ApiService) {
 
-    suspend fun getUsers(): List<User>  = apiService.getUsers()
+    suspend fun getUsers(): List<User> = apiService.getUsers()
     suspend fun getPosts(): List<Post> = apiService.getPosts()
 }
